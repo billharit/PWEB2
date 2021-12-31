@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>J-Query Book List</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+  <body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+    <div class="container mx-auto py-2 px-4 my-4 border rounded bg-blue-300 flex flex-col items-center">   
+      <h1 class="text-center text-3xl">J-Query Book List</h1>
+      <form autocomplete="off" name="form">
+        <div class="w-full flex flex-col justify-center items-center">
+          <label>Judul Buku</label>
+          <input class="w-80 h-8" type="text" id="bookTitle" name="bookTitle" class="form-control"/>
+        </div>
+        <div class="w-full flex flex-col justify-center items-center">
+          <label class="mt-3">Daftar Buku</label>
+            <select id="bookList" class="h-8 w-80">
+                <option value="" class="text-center">Pilih buku...</option>
+            </select>
+        </div>
+
+        <input class="my-8 w-80 h-8 px-4 text-white border border-blue-800 rounded bg-blue-600" type="button" value="Tambah Buku" id="addButton"/>
+      </form>
+    </div>
+
+    <div class="container mx-auto py-2 px-4 my-4 border rounded bg-green-300 flex flex-col items-center">
+        <h1 class="text-center text-3xl">Form Validasi J-Query</h1>
+        <div class="col-lg-8 m-auto d-block">
+            <div class="form">
+                <form id="formValid">
+                    <div class="p-2 grid grid-cols-3 gap-8">
+                        <label class="cols-span-1 text-black font-bold text-xl">Nama</label>
+                        <input class="h-8 w-full col-span-2" type="text" name="nama" id="nama" maxlength="50" required>
+                    </div>
+            
+                    <div class="p-2 grid grid-cols-3 gap-8">
+                        <label class="cols-span-1 text-black font-bold text-xl">NRP</label>
+                        <input class="h-8 w-full col-span-2" type="text" name="nrp" id="nrp" maxlength="14" required>
+                    </div>
+            
+                    <div class="p-2 grid grid-cols-3 gap-8">
+                        <label class="cols-span-1 text-black font-bold text-xl">Alamat</label>
+                        <input class="h-8 w-full col-span-2" type="text" name="Alamat" id="Alamat" required>
+                    </div>
+    
+                    <div class="p-2 grid grid-cols-3 gap-8">
+                        <label class="cols-span-1 text-black font-bold text-xl">Tanggal Lahir</label>
+                        <input class="h-8 w-full col-span-2" type="date" name="tanggal" id="tanggal" required>
+                    </div>
+            
+                    <div class="p-2 grid grid-cols-3 gap-8">
+                        <label class="cols-span-1 text-black font-bold text-xl">Umur</label>
+                        <input class="h-8 w-full col-span-2" type="number" name="umur" id="umur" required>
+                    </div>
+            
+                    <div class="p-2 grid grid-cols-3 gap-8">
+                        <label class="cols-span-1 text-black font-bold text-xl">Email</label>
+                        <input class="h-8 w-full col-span-2" type="email" name="email" id="email" required>
+                    </div>
+            
+                    <div class="p-2 grid grid-cols-3 gap-8">
+                        <label class="cols-span-1 text-black font-bold text-xl">Password</label>
+                        <input class="h-8 w-full col-span-2" type="password" name="password1" id="password1" required>
+                    </div>
+            
+                    <div class="p-2 grid grid-cols-3 gap-8">
+                        <label class="cols-span-1 text-black font-bold text-xl">Konfirmasi Password</label>
+                        <input class="h-8 w-full col-span-2" type="password" name="password2" id="password2" required>
+                    </div>
+            
+                    <div class="p-t-15">
+                        <button class="w-full h-8 border rounded border-green-800 text-white bg-green-800" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/booklist.js"></script>
+  </body>
+</html>
