@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="container flex flex-col justify-center items-center mx-auto">
+            <div class="border rounded my-5 w-40 text-center">
+                <a class="text-center w-full"  href="index.html">Back</a>
+            </div>
+            <div class="px-5 py-3 border rounded flex flex-col justify-center">
+                <h2 class="text-center font-bold">Request Data</h2>
+                <div class="px-3 border-top py-4 text-center">
+                    <button type="button"  class="border py-3 px-4 w-36 bg-yellow-500 text-white font-bold" onclick="loadDoc()">Click to add data</button>
+                    <div class="my-3" id='iniTarget'></div>
+                </div>
+            </div>
+
+    </div>
+</body>
+
+<script>
+    function loadDoc() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+            const myObj = JSON.parse(this.responseText);
+            document.getElementById("iniTarget").innerHTML = myObj.teks;
+        }
+        xhttp.open("GET", "https://mocki.io/v1/a0f26d71-01c3-4b0a-8d83-85deac585b3b", true);
+        
+        xhttp.send();
+    }
+</script>
+
+</html>
